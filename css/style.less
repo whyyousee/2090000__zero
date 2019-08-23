@@ -1,18 +1,15 @@
 @font-face {
     font-family: 'Affect';
-    src: url('/fonts/380CCA_0_0.eot');
-    src: url('/fonts/380CCA_0_0.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/380CCA_0_0.woff2') format('woff2'),
-         url('/fonts/380CCA_0_0.woff') format('woff'),
-         url('/fonts/380CCA_0_0.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 400;
+    src: url('../fonts/380CCA_0_0.eot');
+    src: url('../fonts/380CCA_0_0.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/380CCA_0_0.woff2') format('woff2'),
+         url('../fonts/380CCA_0_0.woff') format('woff'),
+         url('./fonts/380CCA_0_0.ttf') format('truetype');
 }
 
 @href: #1d58bf;
 @hover: #fe403c;
 @heading: #001e35;
-
 
 * {
     margin: 0;
@@ -268,12 +265,12 @@ header {padding-top: 38px;}
     color: inherit;
 
     span {
-            cursor: pointer;
-            color: @href;
-            text-decoration: none;
-            border-bottom: 1px solid;
-            -webkit-transition: color .3s ease-in-out,background .3s ease-in-out,opacity .3s ease-in-out;
-            transition: color .3s ease-in-out,background .3s ease-in-out,opacity .3s ease-in-out;
+        cursor: pointer;
+        color: @href;
+        text-decoration: none;
+        border-bottom: 1px solid;
+        -webkit-transition: color .3s ease-in-out,background .3s ease-in-out,opacity .3s ease-in-out;
+        transition: color .3s ease-in-out,background .3s ease-in-out,opacity .3s ease-in-out;
 
         &:hover {color: #fe403c;}
     }
@@ -289,6 +286,7 @@ header {padding-top: 38px;}
     font-weight: 700;
     font-size: 20px;
     margin-right: 20px;
+    margin-top: 30px;
 }
 
 .tel {
