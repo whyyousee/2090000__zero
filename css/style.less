@@ -1,31 +1,31 @@
-@font-face {
-   font-family: "Affect"; 
-   font-style: normal;
-   font-weight: 400;
-   src: url(../fonts/380CCA_0_0.ttf);
-   src: url(../fonts/380CCA_0_0.woff2);
-   src: url(../fonts/380CCA_0_0.woff);
-   src: url(../fonts/380CCA_0_0.eot);
+@fontface {
+    font-family: 'Affect';
+    src: url('/fonts/380CCA_0_0.eot');
+    src: url('/fonts/380CCA_0_0.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/380CCA_0_0.woff2') format('woff2'),
+         url('/fonts/380CCA_0_0.woff') format('woff'),
+         url('/fonts/380CCA_0_0.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
 }
 
 * {
-	border: 0;
-    outline: 0;
-    font-size: 100%;
     margin: 0;
     padding: 0;
-    font-style: normal;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    text-align: center;
 }
 
 html, body {
 	font-weight: 400;
+    border: 0;
+    outline: 0;
     font-size: 14px;
     line-height: 20px;
     font-family: "IBM Plex Sans", Arial, sans-serif;
     color: #505050;
+    font-style: normal;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
 
     @media screen and (max-width: 768px) {
     font-size: 16px;
@@ -281,7 +281,7 @@ a {
     font-weight: 700;
     font-size: 30px;
     line-height: 40px;
-    font-family: "Affect", Arial, sans-serif;
+    font-family: @fontface, Arial, sans-serif;
     color: #001e35;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -334,7 +334,7 @@ a {
 }
 
 .tel {
-    font-family: "Affect", Arial, sans-serif;
+    font-family: 'Affect', Arial, sans-serif;
 }
 
 .callme__phone-value svg {
