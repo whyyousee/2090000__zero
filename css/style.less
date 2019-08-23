@@ -1,4 +1,4 @@
-@fontface {
+@font-face {
     font-family: 'Affect';
     src: url('/fonts/380CCA_0_0.eot');
     src: url('/fonts/380CCA_0_0.eot?#iefix') format('embedded-opentype'),
@@ -9,9 +9,16 @@
     font-weight: 400;
 }
 
+@href: #1d58bf;
+@hover: #fe403c;
+@heading: #001e35;
+
+
 * {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html, body {
@@ -23,53 +30,55 @@ html, body {
     font-family: "IBM Plex Sans", Arial, sans-serif;
     color: #505050;
     font-style: normal;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
     text-align: center;
 
     @media screen and (max-width: 768px) {
-    font-size: 16px;
-    line-height: 26px;
-}
+        font-size: 16px;
+        line-height: 26px;
+    }
 
 	a {
-		color: #1d58bf;
-		text-decoration: none;
+        color: @href;
+        text-decoration: none;
+        border-bottom: 1px solid;
+        -webkit-transition: color .3s ease-in-out,background .3s ease-in-out,opacity .3s ease-in-out;
+        transition: color .3s ease-in-out,background .3s ease-in-out,opacity .3s ease-in-out;
+    
+        &:hover {color: #fe403c;}
+    }
+}
 
-		&:hover {color: #fe403c;}
-	}
+.h1, h1 {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 30px;
+    font-family: 'Affect', Arial, sans-serif;
+    color: @heading;
+    margin-bottom: 21px;
+    margin-top: 25px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 15px;
+    }
+}
+
+.h4, h4 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: @heading;
+
+    @media screen and (max-width: 768px) {
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
 }
 
 p {
-    margin-bottom: 35px;
-
+    margin-top: 13px;
     span {font-weight: 700;}
-}
-
-.page-container {
-    width: 100%;
-    min-width: 320px;
-    min-height: 100%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-}
-
-.page-content {
-	-webkit-box-flex: 1;
-    -webkit-flex: 1 0 auto;
-    -ms-flex: 1 0 auto;
-    flex: 1 0 auto;
 }
 
 .page-wrapper {
@@ -79,13 +88,16 @@ p {
     position: relative;
 }
 
+.payment-block {
+    margin-top: 40px;
+}
+
 .container, .container-fluid {
     width: 100%;
     padding-right: 10px;
     padding-left: 10px;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 30px;
     margin-bottom: 30px;
 }
 
@@ -99,7 +111,17 @@ p {
     flex-wrap: wrap;
     margin-right: -10px;
     margin-left: -10px;
-    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+header {padding-top: 38px;}
+
+.logo {
+    margin: 0 auto;
+    background-image: url(../img/logo.svg);
+    height: 45.05px;
+    width: 150px;
+    background-size: 100% 100%;
 }
 
 .col-3 {
@@ -129,13 +151,13 @@ p {
 }
 
 .col-sm-12 {
-@media screen and (max-width: 576px) {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 100%;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-    max-width: 100%;
-}
+    @media screen and (max-width: 576px) {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 100%;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
 
 .col-md-6 {
@@ -178,18 +200,6 @@ p {
 		-webkit-transition: all 0s;
     	transition: all 0s;
     }
-}
-
-a {
-    color: #1d58bf;
-    text-decoration: none;
-    border-bottom: 1px solid;
-    -webkit-transition: color .3s ease-in-out,background .3s ease-in-out,opacity .3s ease-in-out;
-    transition: color .3s ease-in-out,background .3s ease-in-out,opacity .3s ease-in-out;
-}
-
-:active, :focus, :hover {
-    outline: 0;
 }
 
 .promo {
@@ -256,18 +266,16 @@ a {
     line-height: 22px;
     width: 100%;
     color: inherit;
-}
 
-.h4, h4 {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 20px;
-    color: #001e35;
-    margin-bottom: 15px;
+    span {
+            cursor: pointer;
+            color: @href;
+            text-decoration: none;
+            border-bottom: 1px solid;
+            -webkit-transition: color .3s ease-in-out,background .3s ease-in-out,opacity .3s ease-in-out;
+            transition: color .3s ease-in-out,background .3s ease-in-out,opacity .3s ease-in-out;
 
-    @media screen and (max-width: 768px) {
-        margin-top: 25px;
-        margin-bottom: 10px;
+        &:hover {color: #fe403c;}
     }
 }
 
@@ -277,78 +285,25 @@ a {
     width: 100%;
 }
 
-.h1, h1 {
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 40px;
-    font-family: @fontface, Arial, sans-serif;
-    color: #001e35;
-    margin-bottom: 20px;
-    margin-top: 20px;
-
-    @media screen and (max-width: 768px) {
-	   	font-size: 24px;
-	    line-height: 30px;
-	    margin-bottom: 15px;
-    }
-}
-
 .callme__phone-value {
     font-weight: 700;
     font-size: 20px;
-    line-height: 20px;
     margin-right: 20px;
-    margin-top: 50px;
-}
-
-.callme__phone {
-	display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: baseline;
-    -webkit-align-items: baseline;
-    -ms-flex-align: baseline;
-    align-items: baseline;
-    font-size: 14px;
-    line-height: 20px;
-
-	@media screen and (max-width: 992px) {
-	    margin-right: 0;
-	    -webkit-box-orient: vertical;
-	    -webkit-box-direction: normal;
-	    -webkit-flex-direction: column;
-	    -ms-flex-direction: column;
-	    flex-direction: column;
-	}
-}
-
-.callme__column {
-
-	@media screen and (max-width: 992px) {
-	    -webkit-box-orient: vertical;
-	    -webkit-box-direction: normal;
-	    -webkit-flex-direction: column;
-	    -ms-flex-direction: column;
-	    flex-direction: column;
-	}
 }
 
 .tel {
+    line-height: 10px;
     font-family: 'Affect', Arial, sans-serif;
 }
 
+
 .callme__phone-value svg {
     fill: #505050;
-    margin-right: 11px;
-}
-
-.svg-phone-icon {
-    width: 14px;
-    height: 15px;
-}
-
-audio, canvas, iframe, img, svg, video {
-    vertical-align: middle;
+    margin-right: 7px;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 5px;
 }
 
 a[href^="tel:"] {
@@ -357,16 +312,8 @@ a[href^="tel:"] {
     cursor: default;
 }
 
-.logo {
-	margin: 0 auto;
-	background-image: url(../img/logo.svg);
-	height: 45.05px;
-	width: 150px;
-	background-size: 100% 100%;
-}
-
 footer {
-    margin-top: 40px;
+    margin-top: 60px;
 	width: 100%;
     background-image: url(../img/footer.svg);
     height: 300px;
